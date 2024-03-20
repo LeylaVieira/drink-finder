@@ -14,6 +14,11 @@ const Bebida = ({bebida}) => {
                     src={bebida.strDrinkThumb}
                     alt={`Imagen de ${bebida.strDrink}`}
                 />
+                <ButtonFav
+                    checked={buscarFavorito(bebida.idDrink)}
+                    evento={() => handleFavoritoSupreme(bebida.idDrink)}
+                    icono={true}
+                />
                 <Card.Body>
                     <Card.Title>{bebida.strDrink}</Card.Title>
                     <Button
@@ -24,10 +29,6 @@ const Bebida = ({bebida}) => {
                             handleBebidaIdClick(bebida.idDrink)
                         }}
                     >Ver receta</Button>
-                    <ButtonFav
-                        checked={buscarFavorito(bebida.idDrink)}
-                        evento={() => handleFavoritoSupreme(bebida.idDrink)}
-                    />
                 </Card.Body>
             </Card>
         </Col>

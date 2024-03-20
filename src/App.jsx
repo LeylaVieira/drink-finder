@@ -15,11 +15,11 @@ function App() {
           <h1>Buscador de bebidas</h1>
         </header>
 
-        <Container>
+        {/* <Container>
           <section className='carrusel'>
             <CarruselBebidasFavoritas />
           </section>
-        </Container>
+        </Container> */}
 
         <Container className="mt-5">
           <Formulario />

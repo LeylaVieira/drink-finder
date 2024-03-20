@@ -26,8 +26,14 @@ const ModalBebida = () => {
                     src={receta.strDrinkThumb}
                     alt={`Imagen receta ${receta.strDrink}`}
                 />
-                <Modal.Header>
+                <Modal.Header className='flex justify-content-between'>
                     <Modal.Title>{receta.strDrink}</Modal.Title>
+                    <div className='flex-shrink-0'>
+                        <ButtonFav
+                            checked={buscarFavorito(receta.idDrink)}
+                            evento={() => handleFavoritoSupreme(receta.idDrink)}
+                        />
+                    </div>
                 </Modal.Header>
                 <Modal.Body>
                     <div className="p-3">
@@ -37,10 +43,6 @@ const ModalBebida = () => {
                         {mostrarIngredientes()}
                     </div>
                     <div className="p-2 d-flex justify-content-end">
-                        <ButtonFav
-                            checked={buscarFavorito(receta.idDrink)}
-                            evento={() => handleFavoritoSupreme(receta.idDrink)}
-                        />
                     </div>
                 </Modal.Body>
             </Modal>
