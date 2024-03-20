@@ -1,4 +1,4 @@
-import { Modal, Image } from 'react-bootstrap'
+import { Modal, Image, CloseButton } from 'react-bootstrap'
 import useBebidas from '../hooks/useBebidas'
 import ButtonFav from './ButtonFav'
 
@@ -26,7 +26,14 @@ const ModalBebida = () => {
                     src={receta.strDrinkThumb}
                     alt={`Imagen receta ${receta.strDrink}`}
                 />
-                <Modal.Header className='flex justify-content-between'>
+                <div data-bs-theme="dark" className='position-absolute top-0 end-0'>
+                    <CloseButton
+                        className='p-3'
+                        aria-label="Close modal"
+                        onClick={handleModalClick}
+                    />
+                </div>
+                <Modal.Header className='d-flex flex-wrap flex-md-nowrap justify-content-between'>
                     <Modal.Title>{receta.strDrink}</Modal.Title>
                     <div className='flex-shrink-0'>
                         <ButtonFav
@@ -41,8 +48,6 @@ const ModalBebida = () => {
                         <p>{receta.strInstructions}</p>
                         <h2>Ingredientes y Cantidades</h2>
                         {mostrarIngredientes()}
-                    </div>
-                    <div className="p-2 d-flex justify-content-end">
                     </div>
                 </Modal.Body>
             </Modal>
