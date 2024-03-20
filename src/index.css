@@ -1,0 +1,36 @@
+header {
+  background-color: #EC3A49;
+  color: white;
+  text-align: center;
+}
+header h1 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 900;
+}
+
+
+.btn__icon {
+  margin-left: .5rem;
+}
+
+.btn__checked .btn__icon {
+  color: red;
+}
+
+.carrusel {
+  overflow: hidden;
+  width: 50%;
+}
+
+.carrusel img {
+  height: 40vh;
+  width: auto;
+}
+
+.carousel {
+  background: var(--bs-dark);
+}
+
+.carousel-inner {
+  text-align: center;
+}
